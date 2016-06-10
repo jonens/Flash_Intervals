@@ -1,0 +1,5 @@
+/* 
+	Flash Intervals
+	Tests for Creating random intervals */
+
+/* constructor */

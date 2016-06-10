@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sound Manager Tests</title>
+		
+		<script type="text/javascript" src = "../../../../Audio/soundmanager/script/soundmanager2.js"></script>
+		
+		
+		
+		
+		
+		
+		
+		<!--<meta name="viewport" content="user-scalable=no, width=device-width" />-->
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+		<script>
+			soundManager.url = '../../../../Audio/soundmanager/swf';
+			soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+			soundManager.useFlashBlock = true; // optionally, enable when you're ready to dive in
+			/*
+			 * read up on HTML5 audio support, if you're feeling adventurous.
+			 * iPad/iPhone and devices without flash installed will always attempt to use it.
+			*/
+			soundManager.onready(function() {
+				// Ready to use; soundManager.createSound() etc. can now be called.
+				var urls = ["C3_piano.mp3", "D3_piano.mp3", "E3_piano.mp3"];
+				var sounds = {0:{name: "C3", sound: null},
+							  1: {name: "D3", sound: null}, 
+							  2: {name: "E3", sound: null}
+				};
+				console.log("soundManager.onready() called");
+				for (var i = 0; i < 3; i++) {
+					sounds[i].sound = soundManager.createSound({
+						id: sounds[i].name,
+						url: '../../../../Audio/notes/' + urls[i]
+					});
+				}
+				/*
+				var note_a = soundManager.createSound({
+					id: 'C3',
+					url: '../../../../Audio/notes/' + urls[0], //C3_piano.mp3',
+					onfinish:function() {
+						note_b.play();
+					}
+					
+				});
+				var note_b = soundManager.createSound({
+					id: 'D3',
+					url: '../../../../Audio/notes/' + urls[1], //D3_piano.mp3',
+					onfinish:function() {
+						note_c.play();
+					}
+					
+				});
+				var note_c = soundManager.createSound({
+					id: 'E3',
+					url: '../../../../Audio/notes/' + urls[2], //E3_piano.mp3',
+					
+				});
+				*/
+				sounds[0].sound.play();
+				//note_a.play();
+				//note_D3.play();
+				//note_E3.play();
+			});
+</script>
+	</head>
+	<body>
+		<script>			
+			
+		</script>		
+		<h3>Running Sound Manager Tests</h3>
+		<div id="sm2-container"><h2>Debug</h2></div>
+	</body>
+</html>
+	
